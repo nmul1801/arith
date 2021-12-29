@@ -1,0 +1,52 @@
+# COMP40 HW4 Machine Arithmetic
+
+Programming Partners:
+    Grace McCarthy(gmccar04), Nick Mulligan (nmulli01)
+
+Help Received From:
+    TA Office Hours
+
+
+Architecture:
+    Our program is structured into modules, where each module contains
+    a step for compression and the corresponding decompression step. In total,
+    there are 5 modules corresponding with compression/decompression
+    steps and 1 module for basic operations
+
+5 Compression/Decompression Step Modules:
+
+    -- RGBToFloats: used for used for converting values from their RGB values
+                    in Pnm_rgb structs to their floating point values in
+                    FloatingPoints structs and vice versa.
+
+    -- RGBFloatsToCompVid: used for converting data from a component video
+                           color space representation to a floating point
+                           representation and vice versa.
+
+    -- DiscreteCosTrans: used to perform discrete cosign and inverse discrete
+                         cosign transformation given a sequence of Comp Video
+                         structs or an array containing abcd (for inverse)
+
+    -- ScaleABCD: Used to convert float values to quantized integers before
+                  packaging them for compression, and converting the
+                  quantized integers back to float values for
+                  decompression
+
+    -- Bitpack: Used to package and retrieve bits. In compression, used to
+                create the unsigned integer word, and in decompression, used
+                to retrieve both the word and to unpack the word and the
+                variables within it
+
+Basic Operations Module:
+    -- changeNums: Used to edit and scale numbers whenever necessary in the
+                   program. Contains a function for converting to an even
+                   number and a function for clamping numbers. It also
+                   contains functions to calculate the maximum and minimum
+                   values that a given width of bits can store
+
+
+To our knowledge, everything in the assignment has been correctly implemented
+
+
+Hours spent analyzing problem: 7
+Hours spent solving the problem: 35
